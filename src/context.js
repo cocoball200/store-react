@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { storeProducts, detailProduct } from './data';
 
-const ProducContext = React.createContext();
+const ProductContext = React.createContext();
 //provider
 //consumner
-const ProductConsumer = ProducContext.Consumer;
+const ProductConsumer = ProductContext.Consumer;
 
 class ProductProvider extends Component {
   state = {
@@ -48,7 +48,10 @@ class ProductProvider extends Component {
     product.total = price;
 
     this.setState(() => {
-      return { products: tempProducts, cart: [...this.state.cart, product] };
+      return {
+        products: tempProducts,
+        cart: [...this.state.cart, product]
+      };
     }, () => { console.log(this.state) })
 
 
@@ -56,9 +59,9 @@ class ProductProvider extends Component {
 
   render() {
     return (
-      <ProducContext.Provider value={{ ...this.state, handleDetail: this.handleDetail, addToCart: this.addToCart }}>
+      <ProductContext.Provider value={{ ...this.state, handleDetail: this.handleDetail, addToCart: this.addToCart }}>
         {this.props.children}
-      </ProducContext.Provider>
+      </ProductContext.Provider>
     );
   }
 }
