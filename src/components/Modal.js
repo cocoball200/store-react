@@ -15,33 +15,33 @@ export default class Modal extends Component {
             if (!modalOpen) {
               return null
             }
-            else {
-              return (
-                <ModalContainer>
-                  <div className="container">
-                    <div className="row">
-                      <div id="modal" className="col-8 mx-auto col-md-6 col-lg-4 text-center"></div>
-                      <h5> item added to the cart </h5>
-                      <img src={img} className="img-fluid" alt="product" />
+            return (
+              <ModalContainer>
+                <div className="container">
+                  <div className="row">
+                    <div id="modal" className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize py-2">
+                      <h5>modal</h5>
+                      <img src={img} alt="product" className="img-fluid" />
                       <h5>{title}</h5>
-                      <h5 className="text-muted">price : $ {price}</h5>
-                      <Link to="/">
-                        <ButtonContainer onclick={() => closeModal()}>
+                      <h5 className="text-muted">price : ${price}</h5>
+                      <Link to='/'>
+                        <ButtonContainer onClick={() => closeModal()}>
                           store
-                        </ButtonContainer>
+                              </ButtonContainer>
                       </Link>
-                      <Link to="/cart">
-                        <ButtonContainer cart onclick={() => closeModal()}>
+                      <Link to='/cart'>
+                        <ButtonContainer cart onClick={() => closeModal()}>
                           go to cart
-                        </ButtonContainer>
+                              </ButtonContainer>
                       </Link>
                     </div>
                   </div>
-                </ModalContainer>
-              );
-            }
+                </div>
+              </ModalContainer>
+            );
           }
         }
+
 
       </ProductConsumer>
     );
@@ -55,6 +55,7 @@ const ModalContainer = styled.div`
   bottom: 0;
   background: rgba(0, 0, 0, 0.3);
   display: flex;
+  justify-content: center;
   align-items: center;
   #modal {
     background: var(--mainWhite);
