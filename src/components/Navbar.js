@@ -6,7 +6,6 @@ import { ButtonContainer } from './Common/Button';
 class Navbar extends Component {
 
   render() {
-
     const NavWrapper = styled.nav`
     background: var(--mainBlue);
     .nav-link {
