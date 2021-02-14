@@ -8,7 +8,7 @@ class Detail extends Component {
     return (
       <ProductConsumer>
         {(value) => {
-          const { id, company, img, info, pricie, title, inCart } = value.detailProduct;
+          const { id, company, img, info, price, title, inCart } = value.detailProduct;
           return (
             <div className="container py-5">
               {/* title */}
@@ -33,7 +33,7 @@ class Detail extends Component {
                   <h4 className="text-blue">
                     <strong>
                       price: <span>$</span>
-                      {pricie}
+                      {price}
                     </strong>
                   </h4>
                   <p className="text-capitalize font-weight-bold mt-3 mb-0">

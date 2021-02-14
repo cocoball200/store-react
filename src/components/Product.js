@@ -18,7 +18,7 @@ class Product extends Component {
                 className="img-container p-5"
                 onClick={() => {
                   value.handleDetail(id);
-
+                  console.log(value)
                 }}>
                 <Link to="/details">
                   <img src={img} alt="product" className="card-img-top" />
@@ -34,7 +34,6 @@ class Product extends Component {
                 </button>
               </div>
             )}
-
           </ProductConsumer>
           {/* Card footer */}
           <div className="card-footer d-flex justify-content-between">
